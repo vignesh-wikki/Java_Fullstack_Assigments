@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        th {
+            font-size: 24px;
+            padding-bottom: 10px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">Register</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" required /></td>
+        </tr>
+        <tr>
+            <td>College</td>
+            <td><input type="text" required /></td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td><input type="text" required /></td>
+        </tr>
+        <tr>
+            <td>DOB:</td>
+            <td><input type="date" required /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" name="gender" value="male" required />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" required />
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Skills:</td>
+            <td>
+                <input type="checkbox" name="skill" value="c" />
+                <label for="c">C</label>
+                <input type="checkbox" name="skill" value="cpp" />
+                <label for="cpp">C++</label>
+                <input type="checkbox" name="skill" value="java" />
+                <label for="java">JAVA</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" required /></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" required /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" required /></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                <select name="city">
+                    <option value="salem">Salem</option>
+                    <option value="namakkal">Namakkal</option>
+                    <option value="rasipuram">Rasipuram</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit" onclick="alert('User Registered')">
+                    Register
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
