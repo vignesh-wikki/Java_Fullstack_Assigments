@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .top_bar {
+        background-color: white;
+        color: black;
+        margin: 20px 50px 0 50px;
+        border-radius: 40px;
+        box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+      }
+      .top_bar h2 {
+        padding: 5px;
+        box-shadow: 5px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top_bar">
+      <center><h2>Photo Gallery</h2></center>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/3680904/pexels-photo-3680904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Image 1"
+        />
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Image 2"
+        />
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/09/10/16/05/art-1659450_640.jpg"
+          alt="Image 3"
+        />
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/1322094/pexels-photo-1322094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Image 4"
+        />
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Image 5"
+        />
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/10051250/pexels-photo-10051250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Image 6"
+        />
+      </div>
+    </div>
+  </body>
+</html>
