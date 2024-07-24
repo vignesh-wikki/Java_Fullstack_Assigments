@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial</title>
+    <script>
+      const calc = () => {
+        let n = document.getElementById("n1").value * 1;
+        console.log(n);
+        let result =
+          "<table border='2' width='50%'><tr><th>Number</th><th>Factorial</th></tr>";
+        for (let index = 1; index <= n; index++) {
+          let element = 1;
+          for (let j = 1; j <= index; j++) {
+            element = element * j;
+          }
+          result += "<tr><td>" + index + "</td><td>" + element + "</td></tr>";
+        }
+        result += "</table>";
+        document.getElementById("ResultDiv").innerHTML = result;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Enter First Number:</h1>
+    <input
+      type="text"
+      id="n1"
+      onfocus="this.value=''"
+      placeholder="enter the number"
+      onblur="calc()"
+    /><br />
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <div id="ResultDiv"></div>
+  </body>
+</html>
