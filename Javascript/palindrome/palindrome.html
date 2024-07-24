@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome</title>
+    <script>
+      function calc() {
+        var a = document.getElementById("n1").value;
+        var element = true;
+        var left=0;
+        var right=a.length - 1;
+        for (let index = 0; index < a.length/2; index++) {
+          if(a.charAt(left)!==a.charAt(right)){
+            element=false;
+            break;
+          } 
+            left++;
+            right--;
+        }
+        if (!element){
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + a+" "+"is a not palindrome" + "</b></font>";
+      }else{
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + a+" "+"is a palindrome" + "</b></font>";
+      }
+      }
+      
+        
+    </script>
+  </head>
+  <body>
+    <h1>Enter String:</h1>
+    <input
+      type="text"
+      id="n1"
+      onfocus="this.value=''"
+      placeholder="enter the String"
+      onblur="calc()"
+    /><br />
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <div id="ResultDiv"></div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+    <script>
+      function calc() {
+        var a = document.getElementById("n1").value;
+        let app = document.querySelector("#ResultDiv");
+        let methods = [
+          "Length :     " + a.length,
+          "charAt:      " + a.charAt(0),
+          "slice:      " + a.slice(0, a.length - 1),
+          "substring:      " + a.substring(0, a.length - 2),
+          "substr:      " + a.substr(4, a.length),
+          "toUpperCase:      " + a.toUpperCase(),
+          "toLowerCase:      " + a.toLowerCase(),
+          "concat:      " + a.concat("Hello"),
+          "trim :     " + a.trim(),
+          "trimStart:      " + a.trimStart(),
+          "trimEnd :     " + a.trimEnd(),
+          "repeat:      " + a.repeat(3),
+          "replace:      " + a.replace("H", "h"),
+          "replaceAll:      " + a.replaceAll("H", "h"),
+          "split:      " + a.split(""),
+        ];
+
+        let nodes = methods.map((lang) => {
+          let p = document.createElement("Li");
+          p.textContent = lang;
+          return p;
+        });
+
+        app.append(...nodes);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Enter String:</h1>
+    <input
+      type="text"
+      id="n1"
+      onfocus="this.value=''"
+      placeholder="enter the String"
+      onblur="calc()"
+    /><br />
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <ul id="ResultDiv"></ul>
+  </body>
+</html>

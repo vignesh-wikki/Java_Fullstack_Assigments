@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script>
+      function calc() {
+        var a = document.getElementById("n1").value*1;
+        var b = document.getElementById("n2").value*1;
+        console.log(a+" "+b);
+        var op = document.getElementById("op").value;
+        var result="";
+        if (op == "add") {
+          result = "Addition: " + (a + b);
+        } else if (op == "sub") {
+          result = "Subtraction: " + (a - b);
+        } else if (op == "mul") {
+          result = "Multiplication: " + a * b;
+        } else if (op == "div") {
+          result = "Division: " + a / b;
+        }
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + result + "</b></font>";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Enter First Number:</h1>
+    <input type="number" id="n1" /><br />
+    <h1>Enter Second Number:</h1>
+    <input type="number" id="n2" /><br />
+    <h1>Select Operation:</h1>
+    <select id="op">
+      <option value="add">Addition</option>
+      <option value="sub">Subtraction</option>
+      <option value="mul">Multiplication</option>
+      <option value="div">Division</option>
+    </select>
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <div id="ResultDiv"></div>
+  </body>
+</html>

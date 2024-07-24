@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script>
+      function calc() {
+        var a = document.getElementById("n1").value*1;
+        console.log(a);
+         var element=1;
+        for (let index = 1; index <= a; index++) {
+           element= element*index; 
+        }
+        console.log(element);
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + element + "</b></font>";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Enter First Number:</h1>
+    <input type="text" id="n1" onfocus="this.value=''" placeholder="enter the number" onblur="calc()" /><br />
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <div id="ResultDiv"></div>
+  </body>
+</html>

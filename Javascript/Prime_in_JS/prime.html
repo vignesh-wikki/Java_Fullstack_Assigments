@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime</title>
+    <script>
+      function calc() {
+        var a = document.getElementById("n1").value * 1;
+        var element = true;
+        if(a=="2") element=true;
+        for (let index = 2; index <= a; index++) {
+          if (a % index == 0) {
+            element = false;
+            break;
+          }
+        }
+        if (!element){
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + a+" "+"is a not prime number" + "</b></font>";
+      }else{
+        document.getElementById("ResultDiv").innerHTML =
+          "<font color='green'><br><b>" + a+" "+"is  a  prime number" + "</b></font>";
+      }
+      }
+      
+        
+    </script>
+  </head>
+  <body>
+    <h1>Enter First Number:</h1>
+    <input
+      type="text"
+      id="n1"
+      onfocus="this.value=''"
+      placeholder="enter the number"
+      onblur="calc()"
+    /><br />
+    <br />
+    <br />
+    <button onclick="calc()">Calculate</button>
+    <div id="ResultDiv"></div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script>
+        function func1(){
+            document.write("function sample");
+        }
+        function func2(a,b){
+            var sum = a+b;
+           alert("Addition"+" "+sum);
+        }
+        function func3(a,b){
+            var sum;
+            if(a>b) sum=a-b;
+            else sum = b-a;
+             
+            alert("Substraction"+" "+sum);
+        }
+        function func4(a,b){
+            
+            var sum = a/b;
+           alert("Division"+" "+sum);
+        }
+        function func5(a,b){
+            var sum = a%b;
+            alert("Remainder"+" "+sum);
+        }
+        function func6(a,b){
+            var sum = a*b;
+          alert("Multiplication"+" "+sum);
+        }
+         function functio(){
+            let name =  prompt("enter your name");
+          alert("Welcome"+" "+name);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="func1()">click me</button>
+     <button onclick="func2(5,10)">Addition</button>
+     <button onclick="func3(5,10)">Substraction</button>
+     <button onclick="func4(5,10)">Division</button>
+     <button onclick="func5(5,10)">Remainder</button>
+     <button onclick="func6(5,9)">Multilication</button>
+    <button onclick="functio()">Prompt</button>
+</body>
+</html>

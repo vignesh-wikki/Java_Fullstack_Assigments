@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script>
+        function func1(){
+            document.write("function sample");
+        }
+        function func2(a,b){
+            var sum = a+b;
+            document.write("Addition"+" "+sum);
+        }
+        function func3(a,b){
+            var sum;
+            if(a>b) sum=a-b;
+            else sum = b-a;
+             
+            document.write("Substraction"+" "+sum);
+        }
+        function func4(a,b){
+            
+            var sum = a/b;
+            document.write("Division"+" "+sum);
+        }
+        function func5(a,b){
+            var sum = a%b;
+            document.write("Remainder"+" "+sum);
+        }
+        function func6(a,b){
+            var sum = a*b;
+            document.write("Multiplication"+" "+sum);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="func1()">click me</button>
+     <button onclick="func2(5,10)">Addition</button>
+     <button onclick="func3(5,10)">Substraction</button>
+     <button onclick="func4(5,10)">Division</button>
+     <button onclick="func5(5,10)">Remainder</button>
+     <button onclick="alert()">Multiplication</button>
+</body>
+</html>

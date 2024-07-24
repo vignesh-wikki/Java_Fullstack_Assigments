@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script>
+        function math1(){
+            let s = ["C","C++","JAVA"];
+            document.write("Array:"+s+"<br>"+"Array Size:  "+s.length+"<br>"+"Array First element:  "+"<br>"+s[0]+"<br>"+"Array last element"+s[s.length-1]+"<br>" );
+            s.push("python");
+            document.writeln(s);
+            s.pop();
+            document.writeln(s);
+           s.forEach(element => {
+            document.writeln("<br>"+element)
+           });
+
+        }
+    </script>
+</head>
+<body onload="math1()">
+    
+</body>
+</html>

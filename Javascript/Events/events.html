@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+    <script>
+      function ONCLICK() {
+        let result = document.getElementById("ResultDiv");
+
+        result.innerHTML = "<>I am the Onclick event";
+      }
+      function ONMOUSEOVER() {
+        let result = document.getElementById("ResultDiv");
+
+        result.innerHTML = "<br><b>I am the ONMOUSEOVER event</b>";
+      }
+      function ONMOUSEOUT() {
+        let result = document.getElementById("ResultDiv");
+
+        result.innerHTML = "<br><b>I am the ONMOUSEOUT event</b>";
+      }
+       function ONKEYDOWN() {
+        let result = document.getElementById("ResultDiv");
+
+        result.innerHTML = "<br><b>I am the ON KEYDOWN event</b>";
+      }
+       function ONKEYUP() {
+        let result = document.getElementById("ResultDiv").style.backgroundColor="red";
+        
+      }
+      function ONCHANGE() {
+        let result = document.getElementById("ResultDiv");
+        let change = document.getElementById("change").value;
+        result.innerHTML = "<br><b>Text typed:</b>"+" "+change;
+      }
+      function ONLOAD() {
+        let result = document.getElementById("ResultDiv");
+        result.innerHTML = "<br><b>i AM LOADING</b>";
+      }
+      function ONSUBMIT(e) {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+          let password = document.getElementById("password").value;
+        let result = document.getElementById("ResultDiv").innerHTML = "<br><b>Form values</b>"+name+" "+password;
+        alert(name+" "+password);
+      }
+
+    </script>
+  </head>
+  <body onload="">
+    <h1>Events</h1>
+    <br />
+    <br />
+    <br />
+    <button onclick="ONCLICK()">ONCLICK</button>
+    <br>
+     <br>
+     <button onmouseover="ONMOUSEOVER()">ONMOUSEOVER</button>
+      <br> <br>
+      <button onmouseout="ONMOUSEOUT()">ONMOUSEOUT</button>
+       <br> <br>
+       <INPUT onkeyup="ONKEYUP()" onkeydown="ONKEYDOWN()">ONKEYDOWN and ONKEYUP</INPUT>
+        <br> <br>
+       <INPUT id="change" onchange="ONCHANGE()">ONCHANGE</INPUT>
+       <br><br>
+       <div>
+        <form onsubmit="ONSUBMIT(e)">
+          <label>name</label>
+          <input id="name" type="text" />
+           <label>password</label>
+          <input id="password" type="password" />
+          <button type="submit" >submit</button>
+        </form>
+       </div>
+    <div id="ResultDiv"></div>
+  </body>
+</html>
