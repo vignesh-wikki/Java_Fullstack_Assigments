@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS grid-template-areas Property</title>
+
+    <style>
+      .geeks {
+        background-color: green;
+        padding: 30px;
+        display: grid;
+        grid-template-areas:
+          "area1 area2 area3"
+          "area1 area4 .";
+        grid-gap: 20px;
+      }
+      .GFG1 {
+        grid-area: area1;
+      }
+      .GFG2 {
+        grid-area: area2;
+      }
+      .GFG3 {
+        grid-area: area3;
+      }
+      .GFG4 {
+        grid-area: area4;
+      }
+
+      .GFG {
+        background-color: white;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="geeks">
+      <div class="GFG GFG1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit iusto
+        consectetur harum excepturi, culpa nam, aspernatur soluta temporibus
+        veniam incidunt vero, esse eveniet. Consequuntur vel dignissimos,
+        provident aliquid magnam quisquam. Lorem ipsum, dolor sit amet
+        consectetur adipisicing elit. Consequuntur, magnam facere omnis,
+        doloremque quae repellendus enim nam nulla possimus labore
+        exercitationem, eum cumque commodi. Vero consequuntur nobis voluptates
+        nam eius? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Optio natus deleniti ab, ipsum numquam veniam soluta eum. Commodi
+        accusantium odit vel, voluptate neque molestiae, odio, quisquam quos
+        voluptatem doloribus architecto! Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Officia totam, quam nisi repellat nulla,
+        exercitationem, ad voluptatem nobis aliquid voluptatum beatae fugit eius
+        obcaecati? Harum suscipit praesentium dolores ab itaque.
+      </div>
+      <div class="GFG GFG2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ea
+        placeat quidem! Repellat veniam sunt quae velit eveniet modi, aut animi
+        dignissimos sapiente nulla dolore quibusdam assumenda distinctio
+        voluptatem numquam?
+      </div>
+      <div class="GFG GFG3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique
+        aliquid adipisci vel dolores! Dolorem quam tempore odio nisi! Et ratione
+        facilis laborum inventore consequatur a voluptatibus blanditiis
+        molestiae eius! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quas ex expedita aliquam atque possimus suscipit accusantium deleniti
+        quia minus odio. Numquam, nihil. Reprehenderit eum, nostrum eius impedit
+        atque ipsa similique.
+      </div>
+      <div class="GFG GFG4">D</div>
+    </div>
+  </body>
+</html>
