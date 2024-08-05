@@ -4,9 +4,10 @@
     background-color: #121212;
     border-radius: 10px;
     color: #ffffff;
+    margin-top: 4.6rem;
   "
 >
-  <div style="display: flex; margin: 1rem">
+  <div style=" display: flex; align-content: center; justify-content: start; padding: 10px;">
     <div
       style="
         border-radius: 50%;
@@ -74,11 +75,11 @@
   >
     <div
       class="hovered"
-      *ngFor="let item of items"
+      *ngFor="let item of data$ | async"
       style="padding: 10px; margin: 2rem"
     >
       <div>
-        <div (click)="delete(item.id)">&#8904;</div>
+        <div (click)="deleteMusic(item.id)">&#8904;</div>
         <img
           src="{{ item.imglink }}"
           style="
@@ -90,8 +91,9 @@
         />
         <p style="letter-spacing: 2px; font-weight: 700">{{ item.name }}</p>
         <p
-          (click)="update(item.id)"
+          (click)="updateMusic(item.id)"
           style="
+          width: 5rem;
             letter-spacing: 2px;
             padding: 5px;
             border-radius: 27px;

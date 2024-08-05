@@ -1,40 +1,43 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Music } from './model/Music';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private Key = 'data';
-  updating: boolean = false;
-  id: number = 0;
-  constructor() {}
+  url: string;
+  Music_arr: Music[];
+  Music: Music;
+  updating: boolean;
+  updating_id: number;
 
-  save(item: any): void {
-    const items = this.get();
-    const existingIndex = items.findIndex((i: any) => i.id === item.id);
-
-    if (existingIndex !== -1) {
-      items[existingIndex] = item;
-    } else {
-      items.push(item);
-    }
-
-    localStorage.setItem(this.Key, JSON.stringify(items));
+  constructor(private http: HttpClient) {
+    this.url = 'http://localhost:8000/music';
+    this.Music = new Music();
+    this.Music_arr = [];
+    this.updating = false;
+    this.updating_id = 0;
   }
 
-  get(): any[] {
-    const storedItems = localStorage.getItem(this.Key);
-    return storedItems ? JSON.parse(storedItems) : [];
+  insertMusic(music: Music) {
+    this.http.post<Music>(this.url, music).subscribe();
   }
 
-  delete(id: number): void {
-    const items = this.get();
-    const filteredItems = items.filter((item: any) => item.id !== id);
-    localStorage.setItem(this.Key, JSON.stringify(filteredItems));
+  updateMusic(music: Music) {
+    console.log(music);
+    this.http.put<Music>(this.url + '/' + music.id, music).subscribe();
   }
 
-  getItemById(id: number): any {
-    const items = this.get();
-    return items.find((item: any) => item.id === id);
+  deleteMusic(id: number) {
+    this.http.delete<Music>(this.url + '/' + id).subscribe();
+  }
+
+  findMusic(id: number) {
+    return this.http.get<Music>(this.url + '/' + id);
+  }
+
+  findallMusic() {
+    return this.http.get<Music[]>(this.url);
   }
 }

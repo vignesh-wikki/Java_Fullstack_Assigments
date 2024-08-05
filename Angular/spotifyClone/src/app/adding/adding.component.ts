@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Music } from '../model/Music';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-adding',
@@ -7,26 +10,41 @@ import { ApiService } from '../api.service';
   styleUrl: './adding.component.css',
 })
 export class AddingComponent {
-  items: any[] = [];
-  newitem: any = { id:0, name: '', imglink: '' };
-  updating: boolean;
-  constructor(private api: ApiService) {
-    this.items = api.get();
-    this.updating = api.updating;
+  data: any;
+  items$: Observable<Music[]>;
+  music: Music;
+  updating_status: boolean;
+
+  constructor(private api: ApiService, private router: Router) {
+    this.music = new Music();
+    this.items$ = new Observable<Music[]>();
+    this.updating_status = api.updating;
+
+    if (this.updating_status) {
+      this.items$ = this.api.findallMusic();
+
+      this.items$.subscribe((data) => {
+         const foundMusic = data.find((item) => item.id === api.updating_id);
+         if (foundMusic) {
+           this.music = foundMusic;
+         }
+       
+      });
+    }
   }
 
-  add() {
-    if(this.api.id>0){
-      this.newitem.id=this.api.id;
-    }
-    if (this.newitem.name !== '' && this.newitem.imglink !== '') {
-      if (this.newitem.id === 0) {
-        this.newitem.id = new Date().getTime();
+  add(data: Music) {
+    if (this.updating_status && data.name !== '' && data.imglink !== '') {
+      data.id = this.api.updating_id;
+      this.api.updateMusic(data);
+      this.api.updating = false;
+      this.api.updating_id = 0;
+    } else {
+      if (data.name !== '' && data.imglink !== '') {
+        data.id = new Date().getTime();
+        this.api.insertMusic(data);
       }
-      this.api.save(this.newitem);
-
-      this.newitem = { id: 0, name: '' };
-      this.items=this.api.get();
     }
+    this.router.navigate(['/']);
   }
 }
