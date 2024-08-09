@@ -11,8 +11,7 @@ CREATE TABLE MASTER (
 describe master;
 
 -- Inserting the values into table
-INSERT ALL 
-INTO MASTER (
+INSERT ALL INTO MASTER (
     CLIENT_NO,
     NAME,
     CITY,
@@ -203,6 +202,33 @@ WHERE
     CITY='Mumbai';
 
 COMMIT;
+
 --  4. FIND THE NAME AND ADDRESS OF CUSTOMER WHO HAS PLACED ORDER_NO 'O19003' AND 'O19002' RESPECTIVELY.
---  5. CONSTRUCT ENGLISH LIKE SENTENCE FROM THE TABLE CLIENT_MASTER ({CUSTOMER NAME} LIVE IN THE CITY OF {CITY}).
+SELECT
+    A.NAME,
+    A.CITY
+FROM
+    MASTER A
+    INNER JOIN SALES B
+    ON B.ORDER_NO='O19003'
+    AND B.ORDER_NO='O19002'
+ --  5. CONSTRUCT ENGLISH LIKE SENTENCE FROM THE TABLE CLIENT_MASTER ({CUSTOMER NAME} LIVE IN THE CITY OF {CITY}).
+    SELECT
+        NAME
+        ||' live in the city of'
+        ||CITY
+    FROM
+        MASTER;
+
 --  6. List the client_no, name, city and pincode of clients whose Order_status is "In process".
+SELECT
+    A.CLIENT_NO,
+    A.NAME,
+    A.CITY,
+    A.PINCODE
+FROM
+    MASTER A
+    INNER JOIN SALES B
+    ON B.ORDER_STATUS='
+
+In process';
