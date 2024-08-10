@@ -1,4 +1,5 @@
-package Java.Practices.Input_output;
+package CoreJava.practices.Input_output;
+
 import java.util.Scanner;
 
 class Employee {
@@ -14,7 +15,7 @@ class Employee {
         employeeId = sc.nextInt();
         System.out.println("Enter the employee name: ");
         employeeName = sc.next();
-        System.out.println("Enter the employee id: ");
+        System.out.println("Enter the employee salary: ");
         employeeSalary = sc.nextFloat();
 
         System.out.println("Entered id : " + employeeId);
@@ -23,6 +24,8 @@ class Employee {
 
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
+
+        sc.close();
 
         System.out.println(num1 > num2 ? "Max is " + num1 + " " + "Min is" + num2 : "Max is " + num2 + "Min is" + num1);
     }
