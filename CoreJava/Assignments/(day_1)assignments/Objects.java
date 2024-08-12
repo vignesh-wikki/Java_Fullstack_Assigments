@@ -1,4 +1,3 @@
-package CoreJava.Assignments;
 
 public class Objects {
     public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package CoreJava.Assignments;
-
 import java.util.Scanner;
 
 public class Random {

@@ -1,4 +1,3 @@
-package CoreJava.Assignments;
 
 public class OBjects {
     String make;
